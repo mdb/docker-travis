@@ -6,3 +6,6 @@ services:
 before_install:
   - docker pull clapclapexcitement/docker-clouder
   - docker run clapclapexcitement/docker-clouder
+
+script:
+  - echo "hello"
