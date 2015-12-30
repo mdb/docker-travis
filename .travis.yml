@@ -1,22 +1,9 @@
 sudo: true
 
-env:
-  global:
-    - DOCKER_VERSION=1.7.1  # Install Docker version 1.7.1
-    - DOCKER_VERSION=get.docker.com  # Install Docker using get.docker.com (may break)
-
-    - BRANCH=stable         # Use 'stable' branch
-    - BRANCH=develop        # Use 'develop' branch
-
-    - QUIET=1               # Less verbose logging
-    - UML_FIG=0             # Don't install fig
-    - UML_DOCKERCOMPOSE=1   # Install docker-compose
-
 install:
-  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
-  - sudo docker daemon &
-  - sudo docker pull clapclapexcitement/docker-clouder
-  - sudo docker run clapclapexcitement/docker-clouder
+  - source <(curl -sL https://raw.githubusercontent.com/zuazo/kitchen-in-travis/master/scripts/start_docker.sh)
+  - docker pull clapclapexcitement/docker-clouder
+  - docker run clapclapexcitement/docker-clouder
 
 script:
   - echo "hello"
