@@ -1,3 +1,5 @@
 # travis-docker
 
-Does this work?
+Does this work in TravisCI? Yes.
+
+Does this work in TravisCI Enterprise? No.
