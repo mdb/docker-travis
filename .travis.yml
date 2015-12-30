@@ -14,7 +14,7 @@ env:
 
 install:
   - curl -sLo - http://j.mp/install-travis-docker | sh -xe
-  - service docker status
+  - eval "$(docker-machine env default)"
   - docker pull clapclapexcitement/docker-clouder
   - docker run clapclapexcitement/docker-clouder
 
