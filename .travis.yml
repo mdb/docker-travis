@@ -14,7 +14,7 @@ env:
 
 install:
   - curl -sLo - http://j.mp/install-travis-docker | sh -xe
-  - docker -d &
+  - sudo docker daemon &
   - docker pull clapclapexcitement/docker-clouder
   - docker run clapclapexcitement/docker-clouder
 
