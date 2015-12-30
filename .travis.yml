@@ -1,9 +1,7 @@
 sudo: required
 
-services:
-  - docker
-
-before_install:
+install:
+  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
   - docker pull clapclapexcitement/docker-clouder
   - docker run clapclapexcitement/docker-clouder
 
